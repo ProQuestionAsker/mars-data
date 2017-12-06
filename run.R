@@ -2,6 +2,8 @@ library(dplyr)
 library(purrr)
 library(darksky)
 
+print("Running")
+
 cityLocations <- read.csv("/app/cityLocations.csv", stringsAsFactors = FALSE, header = TRUE)
 testList <- read.csv("/app/testList.csv", stringsAsFactors = FALSE, header = TRUE)
 
