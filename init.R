@@ -3,7 +3,7 @@
 # Example R code to install packages if not already installed
 #
 
-my_packages = c("tidyverse", "darksky")
+my_packages = c("dplyr", "purrr", "darksky")
 
 install_if_missing = function(p) {
   if (p %in% rownames(installed.packages()) == FALSE) {
@@ -13,7 +13,9 @@ install_if_missing = function(p) {
 
 invisible(sapply(my_packages, install_if_missing))
 
-cityLocations <- read.csv("cityLocations.csv", stringsAsFactors = FALSE, header = TRUE)
+cityLocations <- read.csv("/app/cityLocations.csv", stringsAsFactors = FALSE, header = TRUE)
+testList <- read.csv("/app/testList.csv", stringsAsFactors = FALSE, header = TRUE)
+
 
 getWeather <- function(citySelect, territorySelect){
   coordinates <- cityLocations %>% 
